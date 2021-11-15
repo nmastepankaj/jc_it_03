@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>There is No class</h1>
+<body>
+    <script>
+        const d = new Date();
+        // location.href = 'https://www.javascripttutorial.net/';
+        var sub = [["A","https://meet.google.com/xhj-pvfu-mom?authuser=0"],["B","https://meet.google.com/mnp-rhhd-faj?authuser=0&hs=179"],["C","https://meet.google.com/qkb-ycvh-ofj?authuser=0"],["D","https://meet.google.com/wss-wver-jmy?authuser=0"],["E","https://meet.google.com/omi-xwcy-foy?authuser=0&hs=179"],["F","https://meet.google.com/ujv-oceo-gud?authuser=0&hs=179"]];
+
+        var timeTable = [
+            [[9,"A"],[10,"B"],[11,"C"],[12,"D"],[2,"E"],[3,"F"]],
+            [[9,"B"],[10,"C"],[11,"D"],[12,"E"],[2,"A"],[3,"F"]],
+            [[9,"C"],[10,"D"],[11,"E"],[12,"A"],[2,"B"],[3,""]],
+            [[9,"D"],[10,"E"],[11,"A"],[12,"B"],[2,"C"],[3,""]]
+        ]
+        
+        flag = 0;
+        for (let i = 0; i < timeTable.length; i++) {
+            var period = timeTable[i];   
+            for (let j = 0; j < period.length; j++) {
+                  if(d.getDay()==i+1){
+                      if(d.getHours()%12==period[j][0]){
+                          for (let k = 0; k < sub.length; k++) {
+                              if(period[j][1]==sub[k][0]) {
+                                  flag = 1;
+                                location.href = sub[k][1];                               
+                                break;
+                              }                             
+                          }
+                      }
+                  }  
+            }
+        }
+
+    </script>
+</body>
+</html>
